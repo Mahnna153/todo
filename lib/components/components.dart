@@ -30,50 +30,50 @@ Widget defButton({
       ),
     );
 
-Widget defFormField({
-  //required context,
-  required TextEditingController? controller,
-  required String label,
-  required IconData? prefix,
-  String? initialValue,
-  TextInputType? keyboardType,
-  Function(String)? onSubmit,
-  onChange,
-  onTap,
-  required String? Function(String?) validate,
-  bool isPassword = false,
-  bool enabled = true,
-  IconData? suffix,
-  suffixPressed,
-}) =>
-    TextFormField(
-      controller: controller,
-      keyboardType: keyboardType,
-      obscureText: isPassword,
-      textAlign: TextAlign.start,
-      onFieldSubmitted: onSubmit,
-      enabled: enabled,
-      onChanged: onChange,
-      onTap: onTap,
-      validator: validate,
-      textCapitalization: TextCapitalization.words,
-      textAlignVertical: TextAlignVertical.center,
-      //style: Theme.of(context).textTheme.bodyText1,
-      initialValue: initialValue,
-      //textCapitalization: TextCapitalization.words,
-      decoration: InputDecoration(
-        fillColor: Colors.white,
-        filled: true,
-        label: Text(label),
-        border: const OutlineInputBorder(),
-        prefixIcon: Icon(
-          prefix,
-        ),
-        suffixIcon: suffix != null
-            ? IconButton(onPressed: suffixPressed, icon: Icon(suffix))
-            : null,
-      ),
-    );
+// Widget defFormField({
+//   //required context,
+//   required TextEditingController? controller,
+//   required String label,
+//   required IconData? prefix,
+//   String? initialValue,
+//   TextInputType? keyboardType,
+//   Function(String)? onSubmit,
+//   onChange,
+//   onTap,
+//   required String? Function(String?) validate,
+//   bool isPassword = false,
+//   bool enabled = true,
+//   IconData? suffix,
+//   suffixPressed,
+// }) =>
+//     TextFormField(
+//       controller: controller,
+//       keyboardType: keyboardType,
+//       obscureText: isPassword,
+//       textAlign: TextAlign.start,
+//       onFieldSubmitted: onSubmit,
+//       enabled: enabled,
+//       onChanged: onChange,
+//       onTap: onTap,
+//       validator: validate,
+//       textCapitalization: TextCapitalization.words,
+//       textAlignVertical: TextAlignVertical.center,
+//       //style: Theme.of(context).textTheme.bodyText1,
+//       initialValue: initialValue,
+//       //textCapitalization: TextCapitalization.words,
+//       decoration: InputDecoration(
+//         fillColor: Colors.white,
+//         filled: true,
+//         label: Text(label),
+//         border: const OutlineInputBorder(),
+//         prefixIcon: Icon(
+//           prefix,
+//         ),
+//         suffixIcon: suffix != null
+//             ? IconButton(onPressed: suffixPressed, icon: Icon(suffix))
+//             : null,
+//       ),
+//     );
 
 Widget defAppBar({
   required BuildContext context,
@@ -159,10 +159,10 @@ Widget buildTaskItem(Map model, context) => Dismissible(
       ),
     );
 
-Widget noTasksYet() => Center(
+Widget noTasksYet() => const Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
+        children: [
           Icon(
             Icons.menu,
             size: 100.0,

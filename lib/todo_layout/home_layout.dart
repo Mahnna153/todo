@@ -16,12 +16,13 @@ class HomeLayOutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (BuildContext context) => AppCubit()..createDataBase(),
-      child: BlocConsumer<AppCubit, AppStates>(listener: (context, state) {
-        if (state is InsertDataBaseState) {
-          Navigator.pop(context);
-        }
-      }, builder: (context, state) {
-        AppCubit cubit = AppCubit.get(context);
+      child: BlocConsumer<AppCubit, AppStates>(
+          listener: (context, state) {
+            if (state is InsertDataBaseState) {
+              Navigator.pop(context);
+            }},
+          builder: (context, state) {
+          AppCubit cubit = AppCubit.get(context);
 
         final items = <Widget>[
           const Icon(Icons.menu, size: 30),
